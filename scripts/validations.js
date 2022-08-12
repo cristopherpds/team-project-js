@@ -2,18 +2,16 @@ var fullname = document.getElementById('fullname');
 var email = document.getElementById('email');
 var nextBasicBtn = document.getElementById('nextBasicBtn');
 var nextSocialBtn = document.getElementById('nextSocialBtn');
-var buttonBasic = document.getElementById('buttonBasic');
-var buttonSocial = document.getElementById('buttonSocial');
-var buttonCertificates = document.getElementById('buttonCertificates');
+var flagProgress = 1
 
 const validateName = (fullname) => {
-    const regex = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
+    const regex = /^[a-z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ,',-]+(\s)[a-z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ,',-]+$/i;
     return regex.test(fullname);
 }
 
 const validateEmail = (email) => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email.toLowerCase());
+    const regex = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+    return regex.test(email.toLowerCase());
 }
 
 const validateBirthday = (birthday) => {
@@ -54,6 +52,8 @@ const validatorsBasic = (e) => {
     var checkbox = document.querySelector("#checkbox");
     if (validateName(fullname.value) && validateEmail(email.value) && validateBirthday(birthdaycon) && age.value >= 18 && checkbox.checked) {
         nextBasicBtn.classList.remove('disabled')
+        flagProgress = 2
+        console.log(flagProgress)
     } else {
         nextBasicBtn.classList.add('disabled')
     }
@@ -63,6 +63,8 @@ const validatorsSocial = (e) => {
     var github = document.querySelector("#inputGithub")
     if (validateGithub(github.value)) {
         nextSocialBtn.classList.remove('disabled')
+        flagProgress = 3
+        console.log(flagProgress)
     } else {
         nextSocialBtn.classList.add('disabled')
     }
@@ -74,6 +76,8 @@ const validatorsCertificates = (e) => {
     var graduation = document.querySelector("#inputGraduation")
     if (validadeTeamName(teamname.value) && validadeInstitution(institution.value) && validadeGraduation(graduation.value)) {
         finishButton.classList.remove('disabled')
+        flagProgress = 3
+        console.log(flagProgress)
     } else {
         finishButton.classList.add('disabled')
     }

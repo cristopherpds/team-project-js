@@ -27,10 +27,10 @@
               <button id="buttonBasic" class="nav-button nav-button-basic nav-button-active" onclick="hideTabSc()">Basic</button>
             </li>
             <li class="nav-item col ">
-              <button id="buttonSocial" class="nav-button nav-button-social" onclick="hideTabBc()">Social</button>
+              <button id="buttonSocial" class="nav-button nav-button-social disabled" onclick="hideTabBc()">Social</button>
             </li>
             <li class="nav-item col">
-              <button id="buttonCertificates" class="nav-button nav-button-certificates" onclick="hideTabBs()">Certificates</button>
+              <button id="buttonCertificates" class="nav-button nav-button-certificates disabled" onclick="hideTabBs()">Certificates</button>
             </li>
           </ul>
         </nav>
@@ -49,18 +49,18 @@
           <input type="text" class="form-control" id="nickname" placeholder="Juanito">
         </div>
 
-        <div class="form row col-md-6 mt-4">
-          <div class="form-group col col-xs-12">
+        <div class="form row">
+          <div class="form-group col col-xs-12 col-md-8 mt-4">
             <label class="font-nunito mb-1" for="inputEmail4">Email *</label>
             <input type="email" class="form-control" id="email" placeholder="foo@bar.com">
           </div>
-          <div class="form-group col-xs-12 col-sm-4 ">
+          <div class="form-group col-xs-12 col-sm-4 mt-4">
             <label class="font-nunito mb-1" for="inputPassword4">Phone</label>
             <input type="tel" class="form-control" id="phone" placeholder="(83) 00000-0000">
           </div>
         </div>
 
-        <p class="mt-4 mb-2 font-nunito-title ">Birthday *</p>
+        <p class="mt-4 mb-2 font-nunito-title">Birthday *</p>
         <div class="d-flex justify-content-between d-sm-flex">
 
           <div class="form-group col-3">
@@ -84,7 +84,7 @@
             </select>
           </div>
 
-          <div class="form-group col-2">
+          <div class="form-group col-xs-3 col-sm-2">
             <label class="font-nunito mb-1" for="inputZip">Age</label>
             <input id="age" type="text" placeholder="18" class="form-control" id="inputZip" disabled>
           </div>
@@ -112,13 +112,13 @@
         <nav class="navbar navbar-expand-sm">
           <ul class="nav d-flex w-100 justify-content-between">
             <li class="nav-item col">
-              <button class="nav-button nav-button-basic" onclick="hideTabSc()">Basic</button>
+              <button class="nav-button nav-button-basic disabled" onclick="hideTabSc()">Basic</button>
             </li>
             <li class="nav-item col ">
-              <button class="nav-button nav-button-social nav-button-active" onclick="hideTabBc()">Social</button>
+              <button class="nav-button nav-button-social nav-button-active disabled" onclick="hideTabBc()">Social</button>
             </li>
             <li class="nav-item col">
-              <button class="nav-button nav-button-certificates" onclick="hideTabBs()">Certificates</button>
+              <button class="nav-button nav-button-certificates disabled" onclick="hideTabBs()">Certificates</button>
             </li>
           </ul>
         </nav>
@@ -149,13 +149,13 @@
         <nav class="navbar navbar-expand-sm">
           <ul class="nav d-flex w-100 justify-content-between">
             <li class="nav-item col">
-              <button class="nav-button nav-button-basic " onclick="hideTabSc()">Basic</button>
+              <button class="nav-button nav-button-basic disabled" onclick="hideTabSc()">Basic</button>
             </li>
             <li class="nav-item col ">
-              <button class="nav-button nav-button-social" onclick="hideTabBc()">Social</button>
+              <button class="nav-button nav-button-social disabled" onclick="hideTabBc()">Social</button>
             </li>
             <li class="nav-item col">
-              <button class="nav-button nav-button-certificates nav-button-active"
+              <button class="nav-button nav-button-certificates nav-button-active disabled"
                 onclick="hideTabBs()">Certificates</button>
             </li>
           </ul>
@@ -197,10 +197,11 @@
 
         <div class="d-flex justify-content-end mt-5">
           <button type="submit" id="finishButton" class="btn btn-primary d-flex align-items-center mt-5 mb-2 disabled"> <img
-              src="./style/images/check-icon.svg" alt="checked icon"> Finish </button>
+              src="./style/images/check-icon.svg" alt="checked icon" onsubmit=""> Finish </button>
         </div>
       </form>
     </section>
+    
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

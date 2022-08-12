@@ -13,7 +13,7 @@
 //         tablinks[i].className = tablinks[i].className.replace("active", "");
 //     }
 
-    
+
 //     // Show the current tab, and add an "active" class to the button that opened the tab
 //     document.getElementById(tabName).style.display = "block";
 //     evt.classList.add("nav-button-active");
@@ -27,38 +27,50 @@ var certificates = document.querySelector("#certificates");
 var heart = document.querySelector("#heart-icon");
 
 
-function hideTabSc(){
-    basic.classList.remove("hide");
-    basic.classList.add("show");
-    social.classList.add("hide");
-    certificates.classList.add("hide");
-    social.classList.remove("show");
-    certificates.classList.remove("show");
+function hideTabSc() {
+    if (flagProgress > 1){
+        basic.classList.remove("hide");
+        basic.classList.add("show");
+        social.classList.add("hide");
+        certificates.classList.add("hide");
+        social.classList.remove("show");
+        certificates.classList.remove("show");
+    }
 
 }
 
-function hideTabBc(){
-    social.classList.remove("hide");
-    social.classList.add("show");
-    basic.classList.add("hide");
-    certificates.classList.add("hide");
-    basic.classList.remove("show");
-    certificates.classList.remove("show");
+function hideTabBc() {
+    if (flagProgress >= 2) {
+        social.classList.remove("hide");
+        social.classList.add("show");
+        basic.classList.add("hide");
+        certificates.classList.add("hide");
+        basic.classList.remove("show");
+        certificates.classList.remove("show");
+    } else {
+        validatorsBasic();
+        hideTabSc();
+    }
 }
 
-function hideTabBs(){
-    certificates.classList.remove("hide");
-    certificates.classList.add("show");
-    basic.classList.add("hide");
-    social.classList.add("hide");
-    basic.classList.remove("show");
-    social.classList.remove("show");
+function hideTabBs() {
+    if (flagProgress == 3) {
+        certificates.classList.remove("hide");
+        certificates.classList.add("show");
+        basic.classList.add("hide");
+        social.classList.add("hide");
+        basic.classList.remove("show");
+        social.classList.remove("show");
+    } else {
+        validatorsSocial();
+        hideTabBs();
+    }
 }
 
-function preventDefault(event){
+function preventDefault(event) {
     event.preventDefault;
 }
 
-function changeColor(){
+function changeColor() {
     heart.classList.toggle("btn-primary")
 }
