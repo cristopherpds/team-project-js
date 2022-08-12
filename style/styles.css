@@ -1,12 +1,36 @@
 @import './reset.css';
-.font-size {
+html {
+  font-family: "Nunito", sans-serif;
   font-size: 1rem;
 }
 
-.navbar{
-  display: flex;
-  justify-content: center;
+.font-nunito {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #767676;
 }
+
+.font-nunito-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.125rem;
+  color: #767676;
+}
+
+.font-nunito-checkbox {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #111111;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #111111;
+  font-size: 1.125rem;
+}
+
 .nav-button {
   width: 100%;
   padding: 0.75rem;
@@ -18,4 +42,34 @@
 .nav-button-active {
   border-bottom: 3px solid #074EE8;
   color: #074EE8;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.position-button-1 {
+  margin-top: 17.85%;
+}
+
+.position-button-2 {
+  margin-top: 74.71%;
+}
+
+.position-button-3 {
+  margin-top: 74.71%;
+}
+
+.heartcolor {
+  background-color: #074EE8;
+}
+
+#fullname_error {
+  color: red;
+  font-size: 16px;
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

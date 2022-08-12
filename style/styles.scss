@@ -1,9 +1,37 @@
 @import './reset.css';
 @import './components/abstract/variables';
 
-
-.font-size{
+html{
+    font-family: 'Nunito', sans-serif;
     font-size: 1rem;
+}
+
+.font-nunito{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: $font-grey;
+}
+
+.font-nunito-title{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.125rem;
+    color: $font-grey;
+}
+
+.font-nunito-checkbox{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $font-black;
+}
+
+.font-inter{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: $font-black;
+    font-size: 1.125rem;
+
 }
 
 .nav-button{
@@ -17,4 +45,35 @@
 .nav-button-active{
     border-bottom: 3px solid $border-active;
     color: $border-active
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.position-button-1{
+    margin-top: 17.85%;
+}
+
+
+.position-button-2{
+    margin-top: 74.71%;
+}
+
+.position-button-3{
+    margin-top: 74.71%;
+}
+
+.heartcolor{
+    background-color: $border-active;
+}
+
+#fullname_error{
+    color: red;
+    font-size: 16px;
+    display:none;
 }

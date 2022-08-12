@@ -9,161 +9,213 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="./style/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Nunito&display=swap" rel="stylesheet">
 
-  <title>Document</title>
+  <title>Team Project</title>
 </head>
 
 <body>
   <main class="px-5">
-    <header>
-      <p class="fw-bold">Team Sign Up</p>
-
-      <nav class="navbar navbar-expand-sm">
-       
-          <!-- Links -->
+    <section id="basic">
+      <header>
+        <p class="mt-5 mb-4 font-inter">Team Sign Up</p>
+        <nav class="navbar navbar-expand-sm">
           <ul class="nav d-flex w-100 justify-content-between">
             <li class="nav-item col">
-              <button class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
+              <button id="buttonBasic" class="nav-button nav-button-basic nav-button-active" onclick="hideTabSc()">Basic</button>
             </li>
             <li class="nav-item col ">
-              <button class="nav-button nav-button-social" href="#">Social</button>
+              <button id="buttonSocial" class="nav-button nav-button-social" onclick="hideTabBc()">Social</button>
             </li>
             <li class="nav-item col">
-              <button class="nav-button nav-button-certificates" href="#">Certificates</button>
+              <button id="buttonCertificates" class="nav-button nav-button-certificates" onclick="hideTabBs()">Certificates</button>
             </li>
           </ul>
-    </header>
-
-    </nav>
-    <div id="basic">
-      <form class="tabcontent">
-        <div class="form-group mt-4"> 
-          <label class="label-text-color" for="inputAddress2" style="color:#767676;font-size: 0.875rem;">Full Name
+        </nav>
+      </header>
+      <form id="form-basic">
+        <div class="form-group mt-4">
+          <label class="font-nunito mb-1" for="inputAddress2">Full Name
             *</label>
           <input type="text" class="form-control" id="fullname" placeholder="Foo Bar">
+          <!--Validation-->
+          <p id="fullname_error">Please enter a valid full name</p>
         </div>
-        <div class="form-group col-md-10 mt-4">
-          <label for="nickname" style="color:#767676;font-size: 0.875rem;">Nickname</label>
+
+        <div class="form-group mt-4">
+          <label class="font-nunito mb-1" for="nickname">Nickname</label>
           <input type="text" class="form-control" id="nickname" placeholder="Juanito">
         </div>
 
         <div class="form row col-md-6 mt-4">
-          <div class="form-group col">
-            <label for="inputEmail4" style="color:#767676;font-size: 0.875rem;">Email *</label>
-            <input type="text" class="form-control" id="email" placeholder="foo@bar.com">
+          <div class="form-group col col-xs-12">
+            <label class="font-nunito mb-1" for="inputEmail4">Email *</label>
+            <input type="email" class="form-control" id="email" placeholder="foo@bar.com">
           </div>
-          <div class="form-group col-4">
-            <label for="inputPassword4" style="color:#767676;font-size: 0.875rem;">Phone</label>
-            <input type="text" class="form-control" id="phone" placeholder="(83) 00000-0000">
+          <div class="form-group col-xs-12 col-sm-4 ">
+            <label class="font-nunito mb-1" for="inputPassword4">Phone</label>
+            <input type="tel" class="form-control" id="phone" placeholder="(83) 00000-0000">
           </div>
         </div>
 
-        <p class=" mt-4" style="color: #767676;font-size: 1.125rem;">Birthday *</p>
-        <div class="d-flex justify-content-between">
+        <p class="mt-4 mb-2 font-nunito-title ">Birthday *</p>
+        <div class="d-flex justify-content-between d-sm-flex">
 
           <div class="form-group col-3">
-
-            <label for="inputState" style="color:#767676;font-size: 0.875rem;">Day</label>
-            <select id="inputState" class="form-control form-select">
-              <option selected>01</option>
-              <option>...</option>
+            <label class="font-nunito mb-1" for="day">Day</label>
+            <select id="day" class="form-control form-select" onchange="getSelectDay(this.value);">
+              <option value="-1">&nbsp;</option>
             </select>
           </div>
 
           <div class="form-group col-3">
-            <label for="inputState" style="color:#767676;font-size: 0.875rem;">Month</label>
-            <select id="inputState" class="form-control form-select">
-              <option selected>01</option>
-              <option>...</option>
+            <label class="font-nunito mb-1" for="month">Month</label>
+            <select id="month" class="form-control form-select" onchange="getSelectMonth();">
+              <option value="-1">&nbsp;</option>
             </select>
           </div>
-
+          <!---->
           <div class="form-group col-3">
-            <label for="inputState" style="color:#767676;font-size: 0.875rem;">Year</label>
-            <select id="inputState" class="form-control form-select">
-              <option selected>1991</option>
-              <option>...</option>
+            <label class="font-nunito mb-1" for="year">Year</label>
+            <select id="year" class="form-control form-select" onchange="getSelectValue();">
+              <option value="-1">&nbsp;</option>
             </select>
           </div>
 
           <div class="form-group col-2">
-            <label for="inputZip" style="color:#767676;font-size: 0.875rem;">Age</label>
-            <input type="text" placeholder="18" class="form-control" id="inputZip">
-
+            <label class="font-nunito mb-1" for="inputZip">Age</label>
+            <input id="age" type="text" placeholder="18" class="form-control" id="inputZip" disabled>
           </div>
         </div>
 
-        <div class="form-group pl-4 mt-5 mb-4">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck" style="color: #111111;font-weight: 400;">
+        <div class="form-group pl-4 mt-5 ">
+          <div class="form-check  d-flex align-items-end">
+            <input id="checkbox" class="form-check-input" type="checkbox" id="gridCheck"
+              style="box-sizing: border-box;width: 20px;height: 20px;">
+            <label class="form-check-label font-nunito-checkbox" for="gridCheck" style="margin-left:0.625rem;">
               I accept the terms and privacy
             </label>
           </div>
         </div>
 
         <div class="d-flex justify-content-end pr-4">
-          <button type="submit" class="btn btn-primary">Next ></button>
+          <button type="button" id="nextBasicBtn" class="btn btn-primary d-flex align-items-center disabled mt-5"
+            onclick="hideTabBc()">Next <img src="./style/images/arrow-right.svg" alt="arrow-right"></button>
         </div>
       </form>
-    </div>
-    <div id="social">
-      <form class="tabcontent">
+    </section>
+    <section id="social" class="hide">
+      <header>
+        <p class="mt-5 mb-4 font-inter">Team Sign Up</p>
+        <nav class="navbar navbar-expand-sm">
+          <ul class="nav d-flex w-100 justify-content-between">
+            <li class="nav-item col">
+              <button class="nav-button nav-button-basic" onclick="hideTabSc()">Basic</button>
+            </li>
+            <li class="nav-item col ">
+              <button class="nav-button nav-button-social nav-button-active" onclick="hideTabBc()">Social</button>
+            </li>
+            <li class="nav-item col">
+              <button class="nav-button nav-button-certificates" onclick="hideTabBs()">Certificates</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <form id="form-social">
         <div class="form-group mt-4">
-          <label for="inputAddress" style="color:#767676;font-size: 0.875rem;">LinkedIn</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <label class="font-nunito mb-1" for="inputAddress">LinkedIn</label>
+          <input type="text" class="form-control" id="inputLinkedin"
+            placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
         </div>
 
         <div class="form-group mt-4">
-          <label for="inputAddress2" style="color:#767676;font-size: 0.875rem;">Github *</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <label class="font-nunito mb-1" for="inputAddress2">Github *</label>
+          <input type="text" class="form-control" id="inputGithub" placeholder="https://github.com/foobar">
         </div>
 
         <div class="d-flex justify-content-end mt-4">
-          <button type="submit" class="btn btn-primary">Next ></button>
+          <button type="button" id="nextSocialBtn" class="btn btn-primary d-flex align-items-center mt-5 disabled"
+            onclick="hideTabBs()">Next <img src="./style/images/arrow-right.svg" alt="arrow-right"></button>
         </div>
       </form>
-    </div>
-    <div id="certificates">
-      <form class="tabcontent">
-        <div class="form-group mt-4">
-          <label for="inputAddress" style="color:#767676;font-size: 0.875rem;">Certificates</label>
-          <input type="text" class="form-control" id="inputAddress"
+    </section>
+
+    <section id="certificates" class="hide">
+      <header>
+        <p class="mt-5 mb-4 font-inter">Team Sign Up</p>
+
+        <nav class="navbar navbar-expand-sm">
+          <ul class="nav d-flex w-100 justify-content-between">
+            <li class="nav-item col">
+              <button class="nav-button nav-button-basic " onclick="hideTabSc()">Basic</button>
+            </li>
+            <li class="nav-item col ">
+              <button class="nav-button nav-button-social" onclick="hideTabBc()">Social</button>
+            </li>
+            <li class="nav-item col">
+              <button class="nav-button nav-button-certificates nav-button-active"
+                onclick="hideTabBs()">Certificates</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <form id="form-certificates">
+
+        <div id="courses" class="form-group mt-4">
+          <label class="font-nunito mb-1" for="inputCertificate">Certificates</label>
+          <input type="text" class="form-control" id="inputCertificate"
             placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
         </div>
 
         <div class="d-flex justify-content-end mt-4">
-          <button type="submit" class="btn btn-primary">+ More ></button>
+          <button id="morebtn" type="button" class="btn btn-primary d-flex align-items-center"><img
+              src="./style/images/plus-icon.svg" alt="plus  icon"> More <img src="./style/images/arrow-right.svg"
+              alt="arrow-right"></button>
+        </div>
+
+        <!-- <div class="input-group mt-4">
+          <input type="text" class="form-control" id="inputCertificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"> 
+          <button class="btn d-flex rounded-3" type="button" id="heart-icon" onclick="changeColor()"><img src="./style/images/heart-icon.svg" alt="heart-icon"></button>
+        </div> -->
+
+        <div class="form-group mt-4">
+          <label class="font-nunito mb-1" for="inputTeamName">Team Name *</label>
+          <input type="text" class="form-control" id="inputTeamName" placeholder="Team Name">
         </div>
 
         <div class="form-group mt-4">
-          <label for="inputAddress" style="color:#767676;font-size: 0.875rem;">Team Name *</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Team Name">
+          <label class="font-nunito mb-1" for="inputInstitution">Institution *</label>
+          <input type="text" class="form-control" id="inputInstitution" placeholder="Universidade Federal da Paraíba">
         </div>
 
         <div class="form-group mt-4">
-          <label for="inputAddress" style="color:#767676;font-size: 0.875rem;">Institution *</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Universidade Federal da Paraíba">
+          <label class="font-nunito mb-1" for="inputGraduation">Graduation *</label>
+          <input type="text" class="form-control" id="inputGraduation" placeholder="Ciências da Computação">
         </div>
 
-        <div class="form-group mt-4">
-          <label for="inputAddress" style="color:#767676;font-size: 0.875rem;">Graduation *</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Ciências da Computação">
-        </div>
-
-        <div class="d-flex justify-content-end mt-4">
-          <button type="submit" class="btn btn-primary">✓ Finish</button>
+        <div class="d-flex justify-content-end mt-5">
+          <button type="submit" id="finishButton" class="btn btn-primary d-flex align-items-center mt-5 mb-2 disabled"> <img
+              src="./style/images/check-icon.svg" alt="checked icon"> Finish </button>
         </div>
       </form>
-    </div>
+    </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/newLine.js"></script>
+  <script src="./scripts/birthday.js"></script>
+  <script src="./scripts/validations.js"></script>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-  integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-  integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 
 </html>
