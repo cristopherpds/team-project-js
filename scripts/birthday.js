@@ -12,7 +12,7 @@ for (var i = 2022; i >= 1940; i--) {
 var selectedValue;
         function getSelectValue(){
             selectedValue = document.getElementById("year").value;
-            console.log(selectedValue);
+            // console.log(selectedValue);
             //document.getElementById("age").innerHTML = "You selected: " + selectedValue;
         age();
         }
@@ -30,7 +30,7 @@ var selectBox = document.getElementById('day');
   function getSelectDay(e){
     //console.log(e);
     selectedDay = document.getElementById("day").value;
-    console.log(selectedDay);
+    // console.log(selectedDay);
     //document.getElementById("age").innerHTML = "You selected: " + selectedMonth;
     age();
 }
@@ -47,7 +47,7 @@ for (var i = 1; i <= 12; i++) {
 var selectedMonth;
 function getSelectMonth(){
     selectedMonth = document.getElementById("month").value;
-    console.log(selectedMonth);
+    // console.log(selectedMonth);
     //document.getElementById("age").innerHTML = "You selected: " + selectedMonth;
     age();
 }

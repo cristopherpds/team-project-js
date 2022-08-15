@@ -24,53 +24,58 @@
 var basic = document.querySelector("#basic");
 var social = document.querySelector("#social");
 var certificates = document.querySelector("#certificates");
-var heart = document.querySelector("#heart-icon");
+var finishButton = document.querySelector("#finishButton");
 
-
-function hideTabSc() {
-    if (flagProgress > 1){
+function showBasic() {
+    // if (flagProgress > 1) {
         basic.classList.remove("hide");
         basic.classList.add("show");
         social.classList.add("hide");
         certificates.classList.add("hide");
         social.classList.remove("show");
         certificates.classList.remove("show");
-    }
+    // }
 
 }
 
-function hideTabBc() {
-    if (flagProgress >= 2) {
-        social.classList.remove("hide");
-        social.classList.add("show");
-        basic.classList.add("hide");
-        certificates.classList.add("hide");
-        basic.classList.remove("show");
-        certificates.classList.remove("show");
-    } else {
-        validatorsBasic();
-        hideTabSc();
-    }
-}
+function showSocial() {
+    // if (flagProgress >= 2) {}
 
-function hideTabBs() {
-    if (flagProgress == 3) {
+            social.classList.remove("hide");
+            social.classList.add("show");
+            basic.classList.add("hide");
+            certificates.classList.add("hide");
+            basic.classList.remove("show");
+            certificates.classList.remove("show");
+
+    // } else {
+    //     validatorsBasic();
+    //     showBasic();
+    // }
+} 
+
+
+function showCertificates() {
+    // if (flagProgress == 3) {
         certificates.classList.remove("hide");
         certificates.classList.add("show");
         basic.classList.add("hide");
         social.classList.add("hide");
         basic.classList.remove("show");
         social.classList.remove("show");
-    } else {
-        validatorsSocial();
-        hideTabBs();
-    }
+    // } else {
+    //     validatorsSocial();
+    //     showCertificates();
+    // }
 }
 
 function preventDefault(event) {
     event.preventDefault;
 }
 
-function changeColor() {
-    heart.classList.toggle("btn-primary")
-}
+
+finishButton.addEventListener("click", function (e) {
+    e.preventDefault()
+    alert("Parabéns, você foi cadastrado com sucesso!")
+    showBasic();
+})
