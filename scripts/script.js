@@ -27,14 +27,14 @@ var certificates = document.querySelector("#certificates");
 var finishButton = document.querySelector("#finishButton");
 
 function showBasic() {
-    // if (flagProgress > 1) {
+    if (flagProgress > 1) {
         basic.classList.remove("hide");
         basic.classList.add("show");
         social.classList.add("hide");
         certificates.classList.add("hide");
         social.classList.remove("show");
         certificates.classList.remove("show");
-    // }
+    }
 
 }
 
@@ -76,6 +76,6 @@ function preventDefault(event) {
 
 finishButton.addEventListener("click", function (e) {
     e.preventDefault()
-    alert("Parabéns, você foi cadastrado com sucesso!")
+    //alert("Parabéns, você foi cadastrado com sucesso!")
     showBasic();
 })

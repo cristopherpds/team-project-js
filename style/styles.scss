@@ -73,13 +73,37 @@ main{
     margin-top: 74.71%;
 }
 
+.div-position{
+    position: relative;
+}
+
+.button-iconH{
+    border:none;
+    background:none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.4rem;
+}
+
 .button-icon{
     border:none;
     background:none;
+    position: absolute;
+    right: 0.5rem;
+    top: 1.9rem;
 }
 
-.button-colored{
-    background-color: $border-active;
+.button-icon2{
+    border:none;
+    background:none;
+    position: absolute;
+    right: 2.5rem;
+    top: 1.9rem;
+}
+
+.button-painted{
+    fill: $border-active;
+    color: $border-active;
 }
 
 #fullname_error{

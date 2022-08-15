@@ -2,7 +2,7 @@
   
 //YEAR
 var selectBox = document.getElementById('year');
-console.log(selectBox);
+// console.log(selectBox);
 // loop through years
 for (var i = 2022; i >= 1940; i--) {
     // create option element
