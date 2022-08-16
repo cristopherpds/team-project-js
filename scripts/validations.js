@@ -1,5 +1,6 @@
 var fullname = document.getElementById('fullname');
 var email = document.getElementById('email');
+
 var nextBasicBtn = document.getElementById('nextBasicBtn');
 var nextSocialBtn = document.getElementById('nextSocialBtn');
 var flagProgress = 1
@@ -12,6 +13,11 @@ const validateName = (fullname) => {
 const validateEmail = (email) => {
     const regex = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
     return regex.test(email.toLowerCase());
+}
+
+const validadePhone = (phone) => {
+    const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
+    return regex.test(phone);
 }
 
 const validateBirthday = (birthday) => {
@@ -40,49 +46,49 @@ const validadeGraduation = (graduation) => {
 }
 
 
-// const validatorsBasic = (e) => {
+const validatorsBasic = (e) => {
 
-//     var day = document.querySelector("#day");
-//     var month = document.querySelector("#month");
-//     var year = document.querySelector("#year");
-//     var birthdaycon = `${day.value + '/' + month.value + '/' + year.value}`
-//     var age = document.getElementById('age');
-//     var fullname = document.querySelector("#fullname");
-//     var email = document.querySelector("#email");
-//     var checkbox = document.querySelector("#checkbox");
-//     if (validateName(fullname.value) && validateEmail(email.value) && validateBirthday(birthdaycon) && age.value >= 18 && checkbox.checked) {
-//         nextBasicBtn.classList.remove('disabled')
-//         flagProgress = 2
-//         // console.log(flagProgress)
-//     } else {
-//         nextBasicBtn.classList.add('disabled')
-//     }
-// }
+    var day = document.querySelector("#day");
+    var month = document.querySelector("#month");
+    var year = document.querySelector("#year");
+    var birthdaycon = `${day.value + '/' + month.value + '/' + year.value}`
+    var age = document.getElementById('age');
+    var fullname = document.querySelector("#fullname");
+    var email = document.querySelector("#email");
+    var checkbox = document.querySelector("#checkbox");
+    if (validateName(fullname.value) && validateEmail(email.value) && validateBirthday(birthdaycon) && age.value >= 18 && checkbox.checked) {
+        nextBasicBtn.classList.remove('disabled')
+        flagProgress = 2
+        // console.log(flagProgress)
+    } else {
+        nextBasicBtn.classList.add('disabled')
+    }
+}
 
-// const validatorsSocial = (e) => {
-//     var github = document.querySelector("#inputGithub")
-//     if (validateGithub(github.value)) {
-//         nextSocialBtn.classList.remove('disabled')
-//         flagProgress = 3
-//         // console.log(flagProgress)
-//     } else {
-//         nextSocialBtn.classList.add('disabled')
-//     }
-// }
+const validatorsSocial = (e) => {
+    var github = document.querySelector("#inputGithub")
+    if (validateGithub(github.value)) {
+        nextSocialBtn.classList.remove('disabled')
+        flagProgress = 3
+        // console.log(flagProgress)
+    } else {
+        nextSocialBtn.classList.add('disabled')
+    }
+}
 
-// const validatorsCertificates = (e) => {
-//     var teamname = document.querySelector("#inputTeamName")
-//     var institution = document.querySelector("#inputInstitution")
-//     var graduation = document.querySelector("#inputGraduation")
-//     if (validadeTeamName(teamname.value) && validadeInstitution(institution.value) && validadeGraduation(graduation.value)) {
-//         finishButton.classList.remove('disabled')
-//         flagProgress = 3
-//         //console.log(flagProgress)
-//     } else {
-//         finishButton.classList.add('disabled')
-//     }
+const validatorsCertificates = (e) => {
+    var teamname = document.querySelector("#inputTeamName")
+    var institution = document.querySelector("#inputInstitution")
+    var graduation = document.querySelector("#inputGraduation")
+    if (validadeTeamName(teamname.value) && validadeInstitution(institution.value) && validadeGraduation(graduation.value)) {
+        finishButton.classList.remove('disabled')
+        flagProgress = 3
+        //console.log(flagProgress)
+    } else {
+        finishButton.classList.add('disabled')
+    }
 
-// }
+}
 
 document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("form-basic").addEventListener("change", function () {

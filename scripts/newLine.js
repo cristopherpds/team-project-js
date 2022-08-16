@@ -47,7 +47,20 @@ function addInput() {
     div.appendChild(buttonX);
     div.appendChild(buttonH);
     courses.appendChild(div);
-    counter++
+    counter++;
+    buttonX.addEventListener("click", (e)=> {
+      var fatherNode = e.target.parentNode;
+      fatherNode.remove();
+      counter--;
+      // console.log(counter);
+      button.disabled = false;
+    });
+
+    buttonH.addEventListener("click", (e)=> {
+      var fatherNode = e.target.parentNode;
+      fatherNode.insertbefore();
+      // console.log(counter);
+    });
   } else {
     button.disabled = true;
   }
@@ -57,15 +70,3 @@ function addInput() {
 function favorite(id) {
   
 }
-
-// buttonX.addEventListener("click", function(event){
-  
-//   var svg =  event.target.parentNode();
-//   console.log(svg);
-
-// });
-
-buttonH.addEventListener("click", function(){
-  buttonH.classList.add("button-painted");
-  console.log("cliquei");
-});

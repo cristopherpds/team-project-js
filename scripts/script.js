@@ -39,7 +39,7 @@ function showBasic() {
 }
 
 function showSocial() {
-    // if (flagProgress >= 2) {}
+    if (flagProgress >= 2) {
 
             social.classList.remove("hide");
             social.classList.add("show");
@@ -48,25 +48,25 @@ function showSocial() {
             basic.classList.remove("show");
             certificates.classList.remove("show");
 
-    // } else {
-    //     validatorsBasic();
-    //     showBasic();
-    // }
+    } else {
+        validatorsBasic();
+        showBasic();
+    }
 } 
 
 
 function showCertificates() {
-    // if (flagProgress == 3) {
+    if (flagProgress == 3) {
         certificates.classList.remove("hide");
         certificates.classList.add("show");
         basic.classList.add("hide");
         social.classList.add("hide");
         basic.classList.remove("show");
         social.classList.remove("show");
-    // } else {
-    //     validatorsSocial();
-    //     showCertificates();
-    // }
+    } else {
+        validatorsSocial();
+        showCertificates();
+    }
 }
 
 function preventDefault(event) {
